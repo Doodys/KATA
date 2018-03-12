@@ -20,13 +20,13 @@ namespace AreTheyTheSame
         {
             foreach (int Number in a) { Console.Write(Number + " "); Console.WriteLine(); }
             foreach (int Number in b) { Console.Write(Number + " "); }
-            if (a.Length == 0 || b.Length == 0 || a == null || b == null) { return false; }
+            if (a == null || b == null) { return false; }
             else if (a.Length == b.Length)
             {
                 for (int i = 0; i < a.Length; i++)
                 {
                     Array.Sort(b);
-                    if (IsPresent(b, (a[i] * a[i])) == true) { a[i] -= a[i]; continue; }
+                    if (IsPresent(b, (a[i] * a[i])) == true) { continue; }
                     else return false;
                 }
             }
